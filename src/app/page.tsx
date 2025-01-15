@@ -13,9 +13,11 @@ import { Metadata } from "next";
 import Stats from "src/components/Stats";
 
 export const metadata: Metadata = {
-  title: "Free Next.js Template for Startup and SaaS",
-  description: "This is Home for Startup Nextjs Template",
-  // other metadata
+  title: "Servicii IT Profesionale - BANQI",
+  description: "BANQI oferă soluții IT personalizate pentru afaceri de orice dimensiune. De la dezvoltare software, web design, integrare sisteme până la consultanță IT, suntem partenerul tău de încredere pentru transformarea digitală.",
+  keywords: "Servicii IT, Dezvoltare Software, Design Web, Consultanță IT, Integrare Sisteme, Soluții IT, BANQI",
+  robots: "index, follow",
+
 };
 
 export default function Home() {
