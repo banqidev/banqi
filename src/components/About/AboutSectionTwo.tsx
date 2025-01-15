@@ -12,13 +12,13 @@ const AboutSectionTwo = () => {
             >
               <Image
                 src="/images/about/about-image-2.svg"
-                alt="about image"
+                alt="Despre noi"
                 fill
                 className="drop-shadow-three dark:hidden dark:drop-shadow-none"
               />
               <Image
                 src="/images/about/about-image-2-dark.svg"
-                alt="about image"
+                alt="Despre noi"
                 fill
                 className="hidden drop-shadow-three dark:block dark:drop-shadow-none"
               />
@@ -28,29 +28,26 @@ const AboutSectionTwo = () => {
             <div className="max-w-[470px]">
               <div className="mb-9">
                 <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                  Bug free code
+                  Cod fără erori
                 </h3>
                 <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ne asigurăm că fiecare linie de cod este verificată și optimizată pentru performanță, oferind soluții robuste și fiabile.
                 </p>
               </div>
               <div className="mb-9">
                 <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                  Premier support
+                  Suport de top
                 </h3>
                 <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt.
+                  Echipa noastră de asistență este mereu pregătită să răspundă la întrebări și să rezolve orice problemă tehnică.
                 </p>
               </div>
               <div className="mb-1">
                 <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                  Next.js
+                  Tehnologie avansată
                 </h3>
                 <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
-                  Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt
-                  consectetur adipiscing elit setim.
+                  Folosim cele mai recente tehnologii, cum ar fi Next.js, pentru a construi aplicații performante și scalabile.
                 </p>
               </div>
             </div>

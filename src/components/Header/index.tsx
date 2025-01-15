@@ -36,6 +36,11 @@ const Header = () => {
     }
   };
 
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
+  };
+
   const usePathName = usePathname();
 
   return (
@@ -57,18 +62,18 @@ const Header = () => {
                 } `}
               >
                 <Image
-                  src="/images/logo/logo-2.svg"
-                  alt="logo"
-                  width={140}
-                  height={30}
-                  className="w-full dark:hidden"
+                  src="/images/logo/logodev-light.svg"
+                  alt="IT Company Logo"
+                  width={80}
+                  height={20}
+                  className=" dark:hidden"
                 />
                 <Image
-                  src="/images/logo/logo.svg"
-                  alt="logo"
-                  width={140}
-                  height={30}
-                  className="hidden w-full dark:block"
+                  src="/images/logo/logodev-dark.svg"
+                  alt="IT Company Logo"
+                  width={80}
+                  height={20}
+                  className="hidden  dark:block"
                 />
               </Link>
             </div>
@@ -159,18 +164,36 @@ const Header = () => {
                 </nav>
               </div>
               <div className="flex items-center justify-end pr-16 lg:pr-0">
-                <Link
-                  href="/signin"
-                  className="hidden px-7 py-3 text-base font-medium text-dark hover:opacity-70 dark:text-white md:block"
-                >
-                  Sign In
-                </Link>
-                <Link
-                  href="/signup"
-                  className="ease-in-up shadow-btn hover:shadow-btn-hover hidden rounded-sm bg-primary px-8 py-3 text-base font-medium text-white transition duration-300 hover:bg-opacity-90 md:block md:px-9 lg:px-6 xl:px-9"
-                >
-                  Sign Up
-                </Link>
+                <div className="relative">
+                  <button
+                    onClick={toggleDropdown}
+                    className="px-4 py-2 text-gray-700 font-bold dark:text-white hover:bg-gray-200 dark:hover:bg-gray-800 transition w-full lg:w-auto"
+                  >
+                    Limbi
+                  </button>
+                  {dropdownOpen && (
+                    <div className="absolute right-0 mt-2 w-40 bg-white dark:bg-gray-800 shadow-lg rounded-md">
+                      <Link
+                        href="/lang/ro"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                      >
+                        Română
+                      </Link>
+                      <Link
+                        href="/lang/ru"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                      >
+                        Русский
+                      </Link>
+                      <Link
+                        href="/lang/en"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                      >
+                        English
+                      </Link>
+                    </div>
+                  )}
+                </div>
                 <div>
                   <ThemeToggler />
                 </div>

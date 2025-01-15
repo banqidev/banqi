@@ -11,8 +11,8 @@ const Pricing = () => {
     <section id="pricing" className="relative z-10 py-16 md:py-20 lg:py-28">
       <div className="container">
         <SectionTitle
-          title="Simple and Affordable Pricing"
-          paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+          title="Prețuri Simple și Accesibile"
+          paragraph="Alege planul care se potrivește cel mai bine nevoilor tale. Fără costuri ascunse, doar soluții clare și eficiente."
           center
           width="665px"
         />
@@ -27,7 +27,7 @@ const Pricing = () => {
                   : "text-dark dark:text-white"
               } mr-4 cursor-pointer text-base font-semibold`}
             >
-              Monthly
+              Lunar
             </span>
             <div
               onClick={() => setIsMonthly(!isMonthly)}
@@ -52,7 +52,7 @@ const Pricing = () => {
                   : "pointer-events-none text-primary"
               } ml-4 cursor-pointer text-base font-semibold`}
             >
-              Yearly
+              Anual
             </span>
           </div>
         </div>
@@ -61,41 +61,43 @@ const Pricing = () => {
           <PricingBox
             packageName="Lite"
             price={isMonthly ? "40" : "120"}
-            duration={isMonthly ? "mo" : "yr"}
-            subtitle="Lorem ipsum dolor sit amet adiscing elit Mauris egestas enim."
+            duration={isMonthly ? "lună" : "an"}
+            subtitle="Acest plan este perfect pentru startup-uri și afaceri mici, oferind funcționalitățile esențiale pentru a începe."
+
           >
-            <OfferList text="All UI Components" status="active" />
-            <OfferList text="Use with Unlimited Projects" status="active" />
-            <OfferList text="Commercial Use" status="active" />
-            <OfferList text="Email Support" status="active" />
-            <OfferList text="Lifetime Access" status="inactive" />
-            <OfferList text="Free Lifetime Updates" status="inactive" />
+            <OfferList text="Toate componentele UI" status="active" />
+            <OfferList text="Proiecte nelimitate" status="active" />
+            <OfferList text="Utilizare comercială" status="active" />
+            <OfferList text="Suport prin email" status="active" />
+            <OfferList text="Acces pe viață" status="inactive" />
+            <OfferList text="Actualizări gratuite" status="inactive" />
           </PricingBox>
           <PricingBox
             packageName="Basic"
             price={isMonthly ? "399" : "789"}
-            duration={isMonthly ? "mo" : "yr"}
-            subtitle="Lorem ipsum dolor sit amet adiscing elit Mauris egestas enim."
+            duration={isMonthly ? "lună" : "an"}
+            subtitle="Potrivit pentru afaceri medii, acest plan oferă flexibilitate și funcționalități avansate pentru a susține creșterea și eficiența."
           >
-            <OfferList text="All UI Components" status="active" />
-            <OfferList text="Use with Unlimited Projects" status="active" />
-            <OfferList text="Commercial Use" status="active" />
-            <OfferList text="Email Support" status="active" />
-            <OfferList text="Lifetime Access" status="active" />
-            <OfferList text="Free Lifetime Updates" status="inactive" />
+            <OfferList text="Toate componentele UI" status="active" />
+            <OfferList text="Proiecte nelimitate" status="active" />
+            <OfferList text="Utilizare comercială" status="active" />
+            <OfferList text="Suport prin email" status="active" />
+            <OfferList text="Acces pe viață" status="active" />
+            <OfferList text="Actualizări gratuite" status="inactive" />
           </PricingBox>
           <PricingBox
             packageName="Plus"
             price={isMonthly ? "589" : "999"}
-            duration={isMonthly ? "mo" : "yr"}
-            subtitle="Lorem ipsum dolor sit amet adiscing elit Mauris egestas enim."
+            duration={isMonthly ? "lună" : "an"}
+            subtitle="Conceput pentru afaceri mari și proiecte complexe, acest plan include toate funcționalitățile esențiale și suport dedicat."
+
           >
-            <OfferList text="All UI Components" status="active" />
-            <OfferList text="Use with Unlimited Projects" status="active" />
-            <OfferList text="Commercial Use" status="active" />
-            <OfferList text="Email Support" status="active" />
-            <OfferList text="Lifetime Access" status="active" />
-            <OfferList text="Free Lifetime Updates" status="active" />
+            <OfferList text="Toate componentele UI" status="active" />
+            <OfferList text="Proiecte nelimitate" status="active" />
+            <OfferList text="Utilizare comercială" status="active" />
+            <OfferList text="Suport prin email" status="active" />
+            <OfferList text="Acces pe viață" status="active" />
+            <OfferList text="Actualizări gratuite" status="active" />
           </PricingBox>
         </div>
       </div>
