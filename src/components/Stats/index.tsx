@@ -3,12 +3,23 @@ import statsData from "@/components/Stats/statsData";
 const ITStatistics = () => {
   return (
     <section className="pt-16">
-      <div className="container">
+      <div className="container mx-auto">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
-            <div className="flex flex-wrap items-center justify-center rounded-sm bg-gray-light px-8 py-8 dark:bg-gray-dark sm:px-10 md:px-[50px] md:py-[40px] xl:p-[50px] 2xl:px-[70px] 2xl:py-[60px]">
+            <div
+              className="grid grid-cols-1 gap-y-6 gap-x-4 justify-center rounded-sm bg-gray-light px-4 py-6 dark:bg-gray-dark sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6">
               {statsData.map((stat) => (
-                <SingleStat key={stat.id} stat={stat} />
+                <div
+                  key={stat.id}
+                  className="flex flex-col items-center text-center"
+                >
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 sm:text-3xl md:text-4xl">
+                    {stat.value}
+                  </h3>
+                  <p className="mt-2 text-sm font-medium text-gray-600 dark:text-gray-300 sm:text-base">
+                    {stat.name}
+                  </p>
+                </div>
               ))}
             </div>
           </div>
