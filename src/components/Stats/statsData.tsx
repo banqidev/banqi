@@ -4,6 +4,7 @@ const statsData = [
   { id: 3, name: "Linii de Cod Scrise", value: "1M+" },
   { id: 4, name: "Premii Câștigate", value: "15" },
   { id: 5, name: "Căni de Cafea Băute", value: "876" },
+  { id: 6, name: "Ore de Programare", value: "12K+" },
 ];
 
 export default statsData;
