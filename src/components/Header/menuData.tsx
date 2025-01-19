@@ -4,31 +4,31 @@ const menuData: Menu[] = [
   {
     id: 2,
     title: "Despre Noi",
-    path: "/",
+    path: "#home",
+    newTab: false,
+  },
+  {
+    id: 3,
+    title: "Servicii",
+    path: "#features",
     newTab: false,
   },
   {
     id: 3,
     title: "Proiecte",
-    path: "/",
-    newTab: false,
-  },
-  {
-    id: 3,
-    title: "Prețuri",
-    path: "/",
+    path: "#projects",
     newTab: false,
   },
   {
     id: 33,
-    title: "Servicii",
-    path: "/",
+    title: "Preturi",
+    path: "#pricing",
     newTab: false,
   },
   {
     id: 33,
     title: "Contactați-ne",
-    path: "/",
+    path: "#contact",
     newTab: false,
   },
 ];
