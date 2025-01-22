@@ -1,11 +1,10 @@
 const PricingBox = (props: {
   price: string;
-  duration: string;
   packageName: string;
   subtitle: string;
   children: React.ReactNode;
 }) => {
-  const { price, duration, packageName, subtitle, children } = props;
+  const { price, packageName, subtitle, children } = props;
 
   return (
     <div className="w-full">
@@ -13,9 +12,6 @@ const PricingBox = (props: {
         <div className="flex items-center justify-between">
           <h3 className="price mb-2 text-[32px] font-bold text-black dark:text-white">
             $<span className="amount">{price}</span>
-            <span className="time text-lg font-medium text-body-color">
-              /{duration}
-            </span>
           </h3>
           <h4 className="mb-2 text-xl font-bold text-dark dark:text-white">
             {packageName}

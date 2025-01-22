@@ -27,7 +27,7 @@ const Pricing = () => {
                   : "text-dark dark:text-white"
               } mr-4 cursor-pointer text-base font-semibold`}
             >
-              Simplu
+              WordPress
             </span>
             <div
               onClick={() => setIsMonthly(!isMonthly)}
@@ -52,7 +52,7 @@ const Pricing = () => {
                   : "pointer-events-none text-primary"
               } ml-4 cursor-pointer text-base font-semibold`}
             >
-              Laverel
+              Coding
             </span>
           </div>
         </div>
@@ -61,7 +61,6 @@ const Pricing = () => {
           <PricingBox
             packageName="Landing Page"
             price={isMonthly ? "350" : "650"}
-            duration={isMonthly ? "lună" : "an"}
             subtitle="Acest plan este ideal pentru startup-uri și afaceri mici, oferind un site de tip landing page cu funcționalitățile esențiale pentru a-ți lansa prezența online rapid și eficient."
 
           >
@@ -74,8 +73,7 @@ const Pricing = () => {
           </PricingBox>
           <PricingBox
             packageName="Site Corporativ"
-            price={isMonthly ? "600" : "1200"}
-            duration={isMonthly ? "lună" : "an"}
+            price={isMonthly ? "600" : "1000"}
             subtitle="Acest plan este ideal pentru companii care doresc un site corporativ profesional, oferind funcționalități esențiale pentru a-ți prezenta brandul și serviciile la cel mai înalt nivel."
           >
             <OfferList text="Design atractiv" status="active" />
@@ -88,7 +86,6 @@ const Pricing = () => {
           <PricingBox
             packageName="Magazin Online"
             price={isMonthly ? "1000" : "2500"}
-            duration={isMonthly ? "lună" : "an"}
             subtitle="Acest plan este perfect pentru magazine online, oferind funcționalități esențiale pentru a vinde produse eficient și a gestiona comenzile cu ușurință."
 
           >
