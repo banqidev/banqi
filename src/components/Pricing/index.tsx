@@ -8,7 +8,7 @@ const Pricing = () => {
   const [isMonthly, setIsMonthly] = useState(true);
 
   return (
-    <section id="pricing" className="relative z-10 py-16 md:py-20 lg:py-28">
+    <section id="pricing" className="relative z-10 py-8 md:py-10 lg:py-14">
       <div className="container">
         <SectionTitle
           title="Prețuri Simple și Accesibile"
@@ -18,7 +18,7 @@ const Pricing = () => {
         />
 
         <div className="w-full">
-          <div className="mb-8 flex justify-center md:mb-12 lg:mb-16">
+          <div className="mb-4 flex justify-center md:mb-6 lg:mb-8">
             <span
               onClick={() => setIsMonthly(true)}
               className={`${
@@ -27,7 +27,7 @@ const Pricing = () => {
                   : "text-dark dark:text-white"
               } mr-4 cursor-pointer text-base font-semibold`}
             >
-              Lunar
+              Simplu
             </span>
             <div
               onClick={() => setIsMonthly(!isMonthly)}
@@ -52,52 +52,52 @@ const Pricing = () => {
                   : "pointer-events-none text-primary"
               } ml-4 cursor-pointer text-base font-semibold`}
             >
-              Anual
+              Laverel
             </span>
           </div>
         </div>
 
         <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
           <PricingBox
-            packageName="Lite"
-            price={isMonthly ? "40" : "120"}
+            packageName="Landing Page"
+            price={isMonthly ? "350" : "650"}
             duration={isMonthly ? "lună" : "an"}
-            subtitle="Acest plan este perfect pentru startup-uri și afaceri mici, oferind funcționalitățile esențiale pentru a începe."
+            subtitle="Acest plan este ideal pentru startup-uri și afaceri mici, oferind un site de tip landing page cu funcționalitățile esențiale pentru a-ți lansa prezența online rapid și eficient."
 
           >
-            <OfferList text="Toate componentele UI" status="active" />
-            <OfferList text="Proiecte nelimitate" status="active" />
-            <OfferList text="Utilizare comercială" status="active" />
-            <OfferList text="Suport prin email" status="active" />
-            <OfferList text="Acces pe viață" status="inactive" />
-            <OfferList text="Actualizări gratuite" status="inactive" />
+            <OfferList text="Design atractiv" status="active" />
+            <OfferList text="Conținut clar" status="active" />
+            <OfferList text="Call-to-action eficient" status="active" />
+            <OfferList text="Optimizare pentru viteză" status="active" />
+            <OfferList text="Responsive și mobil" status="active" />
+            <OfferList text="SEO de bază" status="active" />
           </PricingBox>
           <PricingBox
-            packageName="Basic"
-            price={isMonthly ? "399" : "789"}
+            packageName="Site Corporativ"
+            price={isMonthly ? "600" : "1200"}
             duration={isMonthly ? "lună" : "an"}
-            subtitle="Potrivit pentru afaceri medii, acest plan oferă flexibilitate și funcționalități avansate pentru a susține creșterea și eficiența."
+            subtitle="Acest plan este ideal pentru companii care doresc un site corporativ profesional, oferind funcționalități esențiale pentru a-ți prezenta brandul și serviciile la cel mai înalt nivel."
           >
-            <OfferList text="Toate componentele UI" status="active" />
-            <OfferList text="Proiecte nelimitate" status="active" />
-            <OfferList text="Utilizare comercială" status="active" />
-            <OfferList text="Suport prin email" status="active" />
-            <OfferList text="Acces pe viață" status="active" />
-            <OfferList text="Actualizări gratuite" status="inactive" />
+            <OfferList text="Design atractiv" status="active" />
+            <OfferList text="Structură intuitivă" status="active" />
+            <OfferList text="Branding coerent" status="active" />
+            <OfferList text="Pagini dedicate servicii" status="active" />
+            <OfferList text="Integrare contact rapid" status="active" />
+            <OfferList text="Securitate avansată" status="active" />
           </PricingBox>
           <PricingBox
-            packageName="Plus"
-            price={isMonthly ? "589" : "999"}
+            packageName="Magazin Online"
+            price={isMonthly ? "1000" : "2500"}
             duration={isMonthly ? "lună" : "an"}
-            subtitle="Conceput pentru afaceri mari și proiecte complexe, acest plan include toate funcționalitățile esențiale și suport dedicat."
+            subtitle="Acest plan este perfect pentru magazine online, oferind funcționalități esențiale pentru a vinde produse eficient și a gestiona comenzile cu ușurință."
 
           >
-            <OfferList text="Toate componentele UI" status="active" />
-            <OfferList text="Proiecte nelimitate" status="active" />
-            <OfferList text="Utilizare comercială" status="active" />
-            <OfferList text="Suport prin email" status="active" />
-            <OfferList text="Acces pe viață" status="active" />
-            <OfferList text="Actualizări gratuite" status="active" />
+            <OfferList text="Design atractiv" status="active" />
+            <OfferList text="Navigare ușoară" status="active" />
+            <OfferList text="Filtre intuitive" status="active" />
+            <OfferList text="Checkout simplificat" status="active" />
+            <OfferList text="Securitate plăți" status="active" />
+            <OfferList text="Suport clienți accesibil" status="active" />
           </PricingBox>
         </div>
       </div>
