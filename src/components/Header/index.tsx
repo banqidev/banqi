@@ -117,8 +117,8 @@ const Header = () => {
                             href={menuItem.path}
                             onClick={(e) => {
                               if (menuItem.path.startsWith("#")) {
-                                e.preventDefault(); // Prevent default navigation for hash links
-                                const elementId = menuItem.path.substring(1); // Remove the '#' to get the ID
+                                e.preventDefault();
+                                const elementId = menuItem.path.substring(1);
                                 const targetElement = document.getElementById(elementId);
                                 if (targetElement) {
                                   targetElement.scrollIntoView({ behavior: "smooth" });
@@ -162,7 +162,7 @@ const Header = () => {
                                   key={subIndex}
                                   onClick={(e) => {
                                     if (submenuItem.path.startsWith("#")) {
-                                      e.preventDefault(); // Handle hash links for submenu
+                                      e.preventDefault();
                                       const elementId = submenuItem.path.substring(1);
                                       const targetElement = document.getElementById(elementId);
                                       if (targetElement) {
