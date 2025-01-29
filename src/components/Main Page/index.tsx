@@ -1,52 +1,61 @@
 "use client";
 
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
+import { EffectComposer, Bloom, ToneMapping } from "@react-three/postprocessing";
+import { BlendFunction } from "postprocessing";
 import Link from "next/link";
 import SectionTitle from "@/components/Common/SectionTitle";
 
-const RoboticEye = ({ mousePosition }) => {
-  const gltf = useGLTF("/models/eye.glb");
+const RoboticEye = () => {
+  const gltf = useGLTF("/models/earth_globe_hologram_2mb_looping_animation.glb");
   const eyeRef = useRef<any>();
 
-  useFrame(() => {
+  useFrame(({ clock }) => {
     if (eyeRef.current) {
-      const { x, y } = mousePosition;
-      eyeRef.current.rotation.y = (x - 0.5) * Math.PI * 0.3;
-      eyeRef.current.rotation.x = -y * Math.PI * 0.3;
+      eyeRef.current.rotation.y = clock.getElapsedTime() * 0.1;
     }
   });
 
-  return <primitive ref={eyeRef} object={gltf.scene} scale={5} position={[5, 0, 0]} />;
+  return (
+    <primitive
+      ref={eyeRef}
+      object={gltf.scene}
+      scale={6}
+      position={[4.2, 0, 0]}
+    />
+  );
 };
 
 const MainPage = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const updateMousePosition = (event: { clientX: number; clientY: number }) => {
-      const x = (event.clientX / window.innerWidth) * 2 - 1;
-      const y = -(event.clientY / window.innerHeight) * 2 + 1;
-      setMousePosition({ x, y });
-    };
-
-    window.addEventListener("mousemove", updateMousePosition);
-    return () => window.removeEventListener("mousemove", updateMousePosition);
-  }, []);
-
   return (
     <section className="relative z-10 h-screen overflow-hidden pt-16 lg:pt-28">
-      {/* Canvas ca background */}
       <div className="absolute inset-0 z-0">
-        <Canvas camera={{ position: [0, 0, 15], fov: 50 }}>
-          <ambientLight intensity={0.5} />
-          <pointLight position={[10, 10, 10]} />
-          <RoboticEye mousePosition={mousePosition} />
+        <Canvas camera={{ position: [0, 0, 15], fov: 40 }}>
+          <ambientLight intensity={0.7} color={"#4a6cf7"} />
+          <pointLight position={[10, 10, 10]} intensity={1} color={"#4a6cf7"} />
+          <directionalLight position={[-5, 5, 5]} intensity={1} color={"#4a6cf7"} />
+          <RoboticEye />
+          <EffectComposer>
+            <Bloom
+              intensity={1.5}
+              luminanceThreshold={2}
+              luminanceSmoothing={0.1}
+              blendFunction={BlendFunction.ADD}
+            />
+            <ToneMapping
+              blendFunction={BlendFunction.OVERLAY}
+              adaptive={true}
+              resolution={512}
+              middleGrey={1.5}
+              maxLuminance={20}
+              averageLuminance={0.1}
+              adaptationRate={0.2}
+            />
+          </EffectComposer>
         </Canvas>
       </div>
-
-      {/* Textul pe partea stângă */}
       <div className="container h-full relative flex items-center">
         <div className="w-full max-w-[600px] px-4">
           <SectionTitle
@@ -54,8 +63,6 @@ const MainPage = () => {
             paragraph="Oferim soluții IT inovatoare, de la dezvoltare software și aplicații personalizate, până la integrarea celor mai noi tehnologii. Ajutăm afacerile să crească prin servicii sigure, scalabile și adaptate nevoilor tale."
             mb="60px"
           />
-
-          {/* Butoanele */}
           <div className="flex space-x-4">
             <Link
               href="#servicii"
