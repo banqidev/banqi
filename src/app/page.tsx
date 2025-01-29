@@ -11,6 +11,7 @@ import Testimonials from "@/components/Testimonials";
 import Video from "src/components/Video";
 import { Metadata } from "next";
 import Stats from "src/components/Stats";
+import MainPage from "@/components/Main Page";
 
 export const metadata: Metadata = {
   title: "Servicii IT Profesionale - BANQI",
@@ -24,6 +25,7 @@ export default function Home() {
   return (
     <>
       <ScrollUp />
+      <MainPage />
       <Hero />
       <Features />
       <Video />
