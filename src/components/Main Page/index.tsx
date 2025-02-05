@@ -1,63 +1,54 @@
 "use client";
 
-import React, { useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { useGLTF } from "@react-three/drei";
-import { EffectComposer, Bloom, ToneMapping } from "@react-three/postprocessing";
-import { BlendFunction } from "postprocessing";
+import React from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import SectionTitle from "@/components/Common/SectionTitle";
-
-const RoboticEye = () => {
-  const gltf = useGLTF("/models/earth_globe_hologram_2mb_looping_animation.glb");
-  const eyeRef = useRef<any>();
-
-  useFrame(({ clock }) => {
-    if (eyeRef.current) {
-      eyeRef.current.rotation.y = clock.getElapsedTime() * 0.1;
-    }
-  });
-
-  return (
-    <primitive
-      ref={eyeRef}
-      object={gltf.scene}
-      scale={6}
-      position={[4.2, 0, 0]}
-    />
-  );
-};
 
 const MainPage = () => {
   return (
-    <section className="relative z-10 h-screen overflow-hidden pt-16 lg:pt-28">
-      <div className="absolute inset-0 z-0">
-        <Canvas camera={{ position: [0, 0, 15], fov: 40 }}>
-          <ambientLight intensity={0.7} color={"#4a6cf7"} />
-          <pointLight position={[10, 10, 10]} intensity={1} color={"#4a6cf7"} />
-          <directionalLight position={[-5, 5, 5]} intensity={1} color={"#4a6cf7"} />
-          <RoboticEye />
-          <EffectComposer>
-            <Bloom
-              intensity={1.5}
-              luminanceThreshold={2}
-              luminanceSmoothing={0.1}
-              blendFunction={BlendFunction.ADD}
-            />
-            <ToneMapping
-              blendFunction={BlendFunction.OVERLAY}
-              adaptive={true}
-              resolution={512}
-              middleGrey={1.5}
-              maxLuminance={20}
-              averageLuminance={0.1}
-              adaptationRate={0.2}
-            />
-          </EffectComposer>
-        </Canvas>
+    <section
+      className="relative z-10 h-screen overflow-hidden pt-16 lg:pt-28 transition-all duration-500  from-white via-gray-200 to-blue-100 dark:from-gray-900 dark:via-black-800 dark:to-black">
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <motion.div
+          className="absolute top-[10%] left-[5%] w-[120px] h-[104px] bg-blue-300 opacity-30 dark:bg-blue-500 dark:opacity-20 clip-hexagon"
+          animate={{ scale: [1, 1.1, 1], rotate: [0, 5, -5, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        <motion.div
+          className="absolute top-[20%] right-[10%] w-[140px] h-[120px] bg-gray-300 opacity-40 dark:bg-blue-500 dark:opacity-30 clip-hexagon"
+          animate={{ scale: [1, 1.1, 1], rotate: [0, -5, 5, 0] }}
+          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        <motion.div
+          className="absolute top-[50%] left-[45%] w-[80px] h-[69px] bg-white opacity-30 dark:opacity-10 clip-hexagon"
+          animate={{ y: [0, -10, 0] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        {[...Array(4)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-[60px] h-[52px] bg-gray-400 opacity-20 dark:bg-gray-600 dark:opacity-10 clip-hexagon"
+            style={{
+              top: `${Math.random() * 90}%`,
+              left: `${Math.random() * 90}%`,
+            }}
+            animate={{ scale: [1, 1.2, 1] }}
+            transition={{
+              duration: Math.random() * 5 + 3,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        ))}
       </div>
-      <div className="container h-full relative flex items-center">
-        <div className="w-full max-w-[600px] px-4">
+
+
+      <div className="container h-full relative flex items-center justify-between px-8">
+        <div className="w-full max-w-[600px] text-black dark:text-white">
           <SectionTitle
             title="Transformăm ideile tale în realitate digitală"
             paragraph="Oferim soluții IT inovatoare, de la dezvoltare software și aplicații personalizate, până la integrarea celor mai noi tehnologii. Ajutăm afacerile să crească prin servicii sigure, scalabile și adaptate nevoilor tale."
@@ -66,18 +57,30 @@ const MainPage = () => {
           <div className="flex space-x-4">
             <Link
               href="#servicii"
-              className="rounded-sm bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
+              className="rounded-sm bg-blue-500 text-white hover:bg-blue-600 px-8 py-4 text-base font-semibold duration-300 ease-in-out dark:bg-primary dark:hover:bg-primary/80"
             >
               Descoperă Serviciile
             </Link>
             <Link
               href="#contact"
-              className="inline-block rounded-sm bg-black px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-black/90 dark:bg-white/10 dark:hover:bg-white/5"
+              className="inline-block rounded-sm bg-gray-700 text-white hover:bg-gray-600 px-8 py-4 text-base font-semibold duration-300 ease-in-out dark:bg-gray-600 dark:text-white dark:hover:bg-gray-700"
             >
               Contactează-ne
             </Link>
           </div>
         </div>
+
+        <motion.div
+          className="hidden lg:block w-[40%] h-[80%]"
+          animate={{ y: [0, -10, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <img
+            src="/images/mainpage/programming-development.png"
+            alt="Laptop Technology"
+            className="w-full h-full object-cover"
+          />
+        </motion.div>
       </div>
     </section>
   );
