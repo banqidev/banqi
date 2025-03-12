@@ -53,7 +53,7 @@ const Footer = () => {
                     </svg>
                   </a>
                   <a
-                    href="https://t.me/bancilaalexandru"
+                    href="https://t.me/banqidev"
                     aria-label="Telegram"
                     target="_blank"
                     rel="noopener noreferrer"
